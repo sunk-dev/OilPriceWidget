@@ -2,7 +2,6 @@
 import requests
 from bs4 import BeautifulSoup
 import streamlit as st
-import pandas as pd
 from urllib.parse import urljoin # 상대 경로를 절대 경로로 바꿀 때 사용
 url='https://www.opinet.co.kr/glopcoilSelect.do#'
 response=requests.get(url)
