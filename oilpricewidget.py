@@ -17,7 +17,7 @@ def crawling_oil_price():
 #crawling_oil_price()
 result=crawling_oil_price()
 st.set_page_config(page_title="International Oil Price  Wiget", layout="centered")  
-st.title(f"국제 유가 위젯")
+st.h3(f"국제 유가 위젯")
 st.markdown("""
     <style>
     /* 스트림릿 기본 요소 숨기기 */
