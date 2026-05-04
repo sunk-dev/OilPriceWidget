@@ -11,8 +11,7 @@ def crawling_oil_price():
         html=response.text
         soup=BeautifulSoup(html,'html.parser')
         title=soup.select_one('#glopcoilVO > div:nth-child(5) > table')
-        df=pd.read_html(str(title)[0])
-        return df
+        return title
     else: 
         return response.status_code
 #crawling_oil_price()
