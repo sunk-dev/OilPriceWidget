@@ -17,35 +17,29 @@ def crawling_oil_price():
 #crawling_oil_price()
 result=crawling_oil_price()
 st.set_page_config(page_title="International Oil Price  Wiget", layout="centered")  
-st.h3(f"국제 유가 위젯")
 st.markdown("""
     <style>
-    /* 스트림릿 기본 요소 숨기기 */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
-    .block-container { padding: 0 !important; }
+    .block-container { padding: 10px !important; } /* 노션 안에서 답답하지 않게 살짝 여백 */
     
-    /* 테이블 커스텀 디자인 */
-    table {
-        width: 100% !important;
-        border-collapse: collapse;
-        font-family: 'Noto Sans KR', sans-serif;
-        font-size: 13px;
-        color: #37352f; /* 노션 기본 글자색 */
+    /* 타이틀 크기 강제 고정 */
+    h1 {
+        font-size: 18px !important; 
+        color: #37352f;
+        margin-bottom: 10px !important;
     }
-    th {
-        background-color: #f7f6f3; /* 노션 강조 배경색 */
-        padding: 8px;
-        border: 1px solid #e9e9e7;
-    }
-    td {
-        padding: 8px;
-        border: 1px solid #e9e9e7;
-        text-align: center;
-    }
+
+    caption { display: none !important; }
+
+    table { width: 100% !important; border-collapse: collapse; font-size: 12px; }
+    th, td { padding: 6px; border: 1px solid #e9e9e7; text-align: center; }
     </style>
     """, unsafe_allow_html=True)
+
+# 2. 타이틀 표시 (st.title 대신 마크다운 사용)
+st.markdown("# ⛽ 국제 유가 정보")
 
 # 3. 데이터 표시 (Markdown/HTML 사용)
 table_html = crawling_oil_price()
